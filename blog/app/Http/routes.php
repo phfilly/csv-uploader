@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/upload', function () {
+    return view('layouts.uploaded');
+});
+
+Route::post('/upload', 'RecordsController@load');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
